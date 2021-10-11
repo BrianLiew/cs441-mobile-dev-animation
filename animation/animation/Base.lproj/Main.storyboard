@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,11 +13,97 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="animation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="test" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Hl-0V-UKN" userLabel="chatbox">
+                                <rect key="frame" x="0.0" y="343.66666666666669" width="375" height="125"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="1Hl-0V-UKN" secondAttribute="height" multiplier="3:1" id="5ay-yc-uyM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0sM-fB-P0D" userLabel="background_view">
+                                <rect key="frame" x="0.0" y="44" width="375" height="299.66666666666669"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="/Users/brianliew/Desktop/cs441-mobile-dev/cs441-mobile-dev-animation/animation/animation/40f.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="1tA-e2-z9m" userLabel="character_view">
+                                <rect key="frame" x="37.666666666666657" y="43.666666666666657" width="300" height="300"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="6n6-Yr-M4q"/>
+                                    <constraint firstAttribute="width" secondItem="1tA-e2-z9m" secondAttribute="height" multiplier="1:1" id="UgN-2l-GKH"/>
+                                    <constraint firstAttribute="width" constant="300" id="zet-aX-xjj"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hpt-E7-nRp" userLabel="control_view">
+                                <rect key="frame" x="0.0" y="468.66666666666674" width="375" height="309.33333333333326"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhY-nm-xVh" userLabel="choice_A">
+                                <rect key="frame" x="50" y="518.66666666666663" width="275" height="79.666666666666629"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="18"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="choice_A">
+                                    <color key="titleColor" systemColor="systemRedColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="choice_A_selected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="thW-fH-Lfp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ugr-xe-Cs8" userLabel="choice_B">
+                                <rect key="frame" x="50" y="648.33333333333337" width="275" height="79.666666666666629"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="18"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="choice_B"/>
+                                <connections>
+                                    <action selector="choice_B_selected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uRm-Qm-WtR"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ugr-xe-Cs8" firstAttribute="height" secondItem="xhY-nm-xVh" secondAttribute="height" id="2O2-DZ-rS9"/>
+                            <constraint firstItem="xhY-nm-xVh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="9OW-d4-Xq3"/>
+                            <constraint firstItem="1tA-e2-z9m" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9jR-uo-MaN"/>
+                            <constraint firstItem="0sM-fB-P0D" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AB3-cn-dWT"/>
+                            <constraint firstItem="0sM-fB-P0D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="CcW-Lh-Q0K"/>
+                            <constraint firstItem="hpt-E7-nRp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DQP-YZ-zMQ"/>
+                            <constraint firstItem="Ugr-xe-Cs8" firstAttribute="top" secondItem="xhY-nm-xVh" secondAttribute="bottom" constant="50" id="ICp-BY-beD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hpt-E7-nRp" secondAttribute="bottom" id="NHI-cB-yk5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hpt-E7-nRp" secondAttribute="trailing" id="OuO-Wx-dwx"/>
+                            <constraint firstItem="1Hl-0V-UKN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Rsl-xo-OEx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ugr-xe-Cs8" secondAttribute="trailing" constant="50" id="WuU-Xy-0Lx"/>
+                            <constraint firstItem="1Hl-0V-UKN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="dQG-T3-NNr"/>
+                            <constraint firstItem="Ugr-xe-Cs8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="eik-ba-NvR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1Hl-0V-UKN" secondAttribute="trailing" id="fpc-cE-7Kq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0sM-fB-P0D" secondAttribute="trailing" id="gAF-3o-zWb"/>
+                            <constraint firstItem="Ugr-xe-Cs8" firstAttribute="width" secondItem="xhY-nm-xVh" secondAttribute="width" id="kk7-Gp-h62"/>
+                            <constraint firstItem="1Hl-0V-UKN" firstAttribute="top" secondItem="1tA-e2-z9m" secondAttribute="bottom" id="n31-bF-prX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ugr-xe-Cs8" secondAttribute="bottom" constant="50" id="oiR-8M-RD6"/>
+                            <constraint firstItem="hpt-E7-nRp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="p7r-Pt-DCc"/>
+                            <constraint firstItem="1Hl-0V-UKN" firstAttribute="top" secondItem="0sM-fB-P0D" secondAttribute="bottom" id="pRV-3O-5FR"/>
+                            <constraint firstItem="hpt-E7-nRp" firstAttribute="top" secondItem="1Hl-0V-UKN" secondAttribute="bottom" id="qAV-RH-MmE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xhY-nm-xVh" secondAttribute="trailing" constant="50" id="sjS-TF-QsK"/>
+                            <constraint firstItem="xhY-nm-xVh" firstAttribute="top" secondItem="1Hl-0V-UKN" secondAttribute="bottom" constant="50" id="vqa-Uk-HEV"/>
+                            <constraint firstItem="1Hl-0V-UKN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xTZ-03-jA4"/>
+                            <constraint firstItem="0sM-fB-P0D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zIY-Gj-huQ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="background_view" destination="0sM-fB-P0D" id="AN6-iy-ci4"/>
+                        <outlet property="character_view" destination="1tA-e2-z9m" id="IF2-Kh-tnE"/>
+                        <outlet property="chatbox" destination="1Hl-0V-UKN" id="YeV-qA-HEw"/>
+                        <outlet property="choice_A" destination="xhY-nm-xVh" id="qc4-8j-694"/>
+                        <outlet property="choice_B" destination="Ugr-xe-Cs8" id="cCE-F3-6v9"/>
+                        <outlet property="control_view" destination="hpt-E7-nRp" id="XRU-yM-jJ3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -25,8 +111,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="/Users/brianliew/Desktop/cs441-mobile-dev/cs441-mobile-dev-animation/animation/animation/40f.jpg" width="128" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

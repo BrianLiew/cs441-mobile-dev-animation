@@ -13,6 +13,7 @@
 		F1682C82270DE30600498BFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1682C80270DE30600498BFD /* Main.storyboard */; };
 		F1682C84270DE30900498BFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1682C83270DE30900498BFD /* Assets.xcassets */; };
 		F1682C87270DE30900498BFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1682C85270DE30900498BFD /* LaunchScreen.storyboard */; };
+		F1682C8F27139AC100498BFD /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1682C8E27139AC100498BFD /* Character.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		F1682C83270DE30900498BFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1682C86270DE30900498BFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1682C88270DE30900498BFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1682C8E27139AC100498BFD /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				F1682C7A270DE30600498BFD /* AppDelegate.swift */,
 				F1682C7C270DE30600498BFD /* SceneDelegate.swift */,
 				F1682C7E270DE30600498BFD /* ViewController.swift */,
+				F1682C8E27139AC100498BFD /* Character.swift */,
 				F1682C80270DE30600498BFD /* Main.storyboard */,
 				F1682C83270DE30900498BFD /* Assets.xcassets */,
 				F1682C85270DE30900498BFD /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1682C7F270DE30600498BFD /* ViewController.swift in Sources */,
+				F1682C8F27139AC100498BFD /* Character.swift in Sources */,
 				F1682C7B270DE30600498BFD /* AppDelegate.swift in Sources */,
 				F1682C7D270DE30600498BFD /* SceneDelegate.swift in Sources */,
 			);

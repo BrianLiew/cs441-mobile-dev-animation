@@ -6,105 +6,61 @@
 //
 
 import UIKit
-import SpriteKit
 
 let screen_width = UIScreen.main.bounds.width
 let screen_height = UIScreen.main.bounds.height
 
 class ViewController: UIViewController {
     
-    // views
-    let background_view = UIImageView()
-    let control_view = UIView()
-    let character_view = UIImageView()
+    @IBOutlet var background_view: UIImageView!
+    @IBOutlet var character_view: UIImageView!
+    @IBOutlet var chatbox: UILabel!
+    @IBOutlet var control_view: UIImageView!
+    @IBOutlet var choice_A: UIButton!
+    @IBOutlet var choice_B: UIButton!
     
-    // labels
-    let chat = UILabel()
-    
-    // buttons
-    let left_button = UIButton(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-    let right_button = UIButton(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-    
-    // variables
-    let my_image = UIImage(named: "40f.png")
+    let characters: [Character] = [
+        Character(name: "Jared")
+    ]
         
+    let jared = Character(name: "Jared")
+
     override func viewDidLoad() {
-    
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        left_button.translatesAutoresizingMaskIntoConstraints = false
-        right_button.translatesAutoresizingMaskIntoConstraints = false
         
-        background_view.backgroundColor = UIColor.lightGray
-        control_view.backgroundColor = UIColor.darkGray
-        character_view.backgroundColor = UIColor.systemRed
-        chat.backgroundColor = UIColor.black
-        left_button.backgroundColor = UIColor.systemRed
-        right_button.backgroundColor = UIColor.systemBlue
-        
-        chat.text = "a wild Pikachu has appeared!"
-        chat.textAlignment = NSTextAlignment.center
-        chat.textColor = UIColor.white
-        
-        character_view.contentMode = UIView.ContentMode.scaleAspectFit
-        character_view.image = my_image
-                        
-        view.addSubview(background_view)
-        view.addSubview(control_view)
-        view.addSubview(character_view)
-        view.addSubview(chat)
         view.sendSubviewToBack(character_view)
         view.sendSubviewToBack(background_view)
-        control_view.addSubview(left_button)
-        control_view.addSubview(right_button)
-
-        NSLayoutConstraint.activate([
-            // view constraints
-            background_view.widthAnchor.constraint(equalToConstant: screen_width),
-            background_view.heightAnchor.constraint(equalToConstant: screen_height / 2),
-            control_view.widthAnchor.constraint(equalToConstant: screen_width),
-            control_view.heightAnchor.constraint(equalToConstant: screen_height / 2),
-            character_view.widthAnchor.constraint(equalToConstant: screen_width),
-            character_view.heightAnchor.constraint(equalToConstant: screen_height / 2),
-
-            // button size constraints
-            left_button.widthAnchor.constraint(equalToConstant: 100),
-            left_button.heightAnchor.constraint(equalToConstant: 200),
-            right_button.widthAnchor.constraint(equalToConstant: 100),
-            right_button.heightAnchor.constraint(equalToConstant: 200),
-            // button position constraints
-            left_button.centerYAnchor.constraint(equalTo: control_view.centerYAnchor),
-            right_button.centerYAnchor.constraint(equalTo: control_view.centerYAnchor),
-            left_button.centerXAnchor.constraint(greaterThanOrEqualTo: view.centerXAnchor, constant: -100),
-            right_button.centerXAnchor.constraint(greaterThanOrEqualTo: view.centerXAnchor, constant: 100),
-            // chat position constraints
-            chat.widthAnchor.constraint(equalToConstant: screen_width),
-            chat.heightAnchor.constraint(equalToConstant: screen_height / 6),
-            chat.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            chat.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-        ])
         
-        chracter_appears()
-        
+        start_game()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    func start_game() {
+        let chatbox_height = chatbox.bounds.height
         
-        background_view.frame = CGRect(x: 0, y: 0, width: screen_width, height: screen_height * (2 / 3))
-        control_view.frame = CGRect(x: 0, y: screen_height * (2 / 3), width: screen_width, height: screen_height * (1 / 3))
-        character_view.frame = CGRect(x: screen_width / 2 - 100, y: screen_height / 2 - 300, width: 200, height: 300)
-        chat.frame = CGRect(x: 0, y: screen_height / 2, width: screen_width, height: screen_height / 6)
+        set_appear_animate(from: (screen_height / 2) + (chatbox_height / 2), to: (screen_height / 2) - (chatbox_height / 2) - 150, duration: 3, a_view: character_view)
+        set_interact(chat: chatbox, top_button: choice_A, bottom_button: choice_B, chat_text: "Hello, World!", top_button_text: "Fight", bottom_button_text: "Run Away")
     }
     
-    func chracter_appears() {
+    func set_appear_animate(from: CGFloat, to: CGFloat, duration: Double, a_view: UIView) {
         let animation = CABasicAnimation()
-        animation.keyPath = "position.y"
-        animation.fromValue = screen_height / 2 + 150
-        animation.toValue = screen_height / 2 - 150
-        animation.duration = 2
         
-        character_view.layer.add(animation, forKey: "basic")
+        animation.keyPath = "position.y"
+        animation.fromValue = from
+        animation.toValue = to
+        animation.duration = duration
+        
+        a_view.layer.add(animation, forKey: "basic")
     }
     
+    func set_interact(chat: UILabel, top_button: UIButton, bottom_button: UIButton, chat_text: String, top_button_text: String, bottom_button_text: String) {
+        chat.text = chat_text
+        top_button.setTitle(top_button_text, for: .normal)
+        bottom_button.setTitle(bottom_button_text, for: .normal)
+    }
+
+    @IBAction func choice_A_selected(_ sender: Any) {
+    }
+    
+    @IBAction func choice_B_selected(_ sender: Any) {
+    }
 }
