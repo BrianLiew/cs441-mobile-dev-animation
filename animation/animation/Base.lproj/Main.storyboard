@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="test" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Hl-0V-UKN" userLabel="chatbox">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Hl-0V-UKN" userLabel="chatbox">
                                 <rect key="frame" x="0.0" y="343.66666666666669" width="375" height="125"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -30,7 +30,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="299.66666666666669"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="/Users/brianliew/Desktop/cs441-mobile-dev/cs441-mobile-dev-animation/animation/animation/40f.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="1tA-e2-z9m" userLabel="character_view">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="40f.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="1tA-e2-z9m" userLabel="character_view">
                                 <rect key="frame" x="37.666666666666657" y="43.666666666666657" width="300" height="300"/>
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                                 <constraints>
@@ -52,7 +52,7 @@
                                     <color key="titleColor" systemColor="systemRedColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="choice_A_selected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="thW-fH-Lfp"/>
+                                    <action selector="choice_A_selected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9nO-BW-pVr"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ugr-xe-Cs8" userLabel="choice_B">
@@ -62,7 +62,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="choice_B"/>
                                 <connections>
-                                    <action selector="choice_B_selected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uRm-Qm-WtR"/>
+                                    <action selector="choice_B_selected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xok-iI-lLU"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -111,7 +111,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="/Users/brianliew/Desktop/cs441-mobile-dev/cs441-mobile-dev-animation/animation/animation/40f.jpg" width="128" height="128"/>
+        <image name="40f.jpg" width="200" height="300"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -19,11 +19,23 @@ class ViewController: UIViewController {
     @IBOutlet var choice_A: UIButton!
     @IBOutlet var choice_B: UIButton!
     
-    let characters: [Character] = [
-        Character(name: "Jared")
-    ]
+    var levels: [Level] = []
+    var current_level: Level? = nil
         
-    let jared = Character(name: "Jared")
+    var entrance_dialouge: [String] = [
+        "A wild Pikachu appears!",
+        "What will you do?"
+    ]
+    
+    var entrance_choice_A_text: [String] = [
+        "-",
+        "Throw rock"
+    ]
+    
+    var entrance_choice_B_Text: [String] = [
+        "-",
+        "Run past"
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,36 +43,35 @@ class ViewController: UIViewController {
         view.sendSubviewToBack(character_view)
         view.sendSubviewToBack(background_view)
         
+        game_init()
         start_game()
     }
     
+    func game_init() {
+        let levels_init: [Level] = [
+            Level(
+                name: "entrance",
+                number: 0,
+                a_choice_A: choice_A,
+                a_choice_B: choice_B,
+                a_chatbox: chatbox,
+                a_char_view: character_view,
+                a_char_img: "40f.jpg",
+                dialouge: entrance_dialouge,
+                choice_A_text: entrance_choice_A_text,
+                choice_B_text: entrance_choice_B_Text
+            )
+        ]
+        for level in levels_init { levels.append(level) }
+        
+        print("game initialized with \(levels.count) level(s)")
+    }
+    
     func start_game() {
-        let chatbox_height = chatbox.bounds.height
+        current_level = levels[0]
+        guard let room = current_level else { return }
+        room.set_appear_animate(from: (screen_height / 2) + (chatbox.bounds.height / 2), to: (screen_height / 2) - (chatbox.bounds.height / 2) - 150, duration: 3, a_view: character_view)
         
-        set_appear_animate(from: (screen_height / 2) + (chatbox_height / 2), to: (screen_height / 2) - (chatbox_height / 2) - 150, duration: 3, a_view: character_view)
-        set_interact(chat: chatbox, top_button: choice_A, bottom_button: choice_B, chat_text: "Hello, World!", top_button_text: "Fight", bottom_button_text: "Run Away")
     }
     
-    func set_appear_animate(from: CGFloat, to: CGFloat, duration: Double, a_view: UIView) {
-        let animation = CABasicAnimation()
-        
-        animation.keyPath = "position.y"
-        animation.fromValue = from
-        animation.toValue = to
-        animation.duration = duration
-        
-        a_view.layer.add(animation, forKey: "basic")
-    }
-    
-    func set_interact(chat: UILabel, top_button: UIButton, bottom_button: UIButton, chat_text: String, top_button_text: String, bottom_button_text: String) {
-        chat.text = chat_text
-        top_button.setTitle(top_button_text, for: .normal)
-        bottom_button.setTitle(bottom_button_text, for: .normal)
-    }
-
-    @IBAction func choice_A_selected(_ sender: Any) {
-    }
-    
-    @IBAction func choice_B_selected(_ sender: Any) {
-    }
 }
