@@ -13,40 +13,27 @@ class Level {
     // object identifiers
     let name: String
     let number: Int
-    // outlets
-    let choice_A: UIButton
-    let choice_B: UIButton
-    let chatbox: UILabel
-    // img outlet & value
-    var char_view: UIImageView
+    // properties
     var char_img: String
-    // states
     var states: [State]
     
     init(
         // object properties
         name: String,
         number: Int,
-        // outlets
-        choice_A: UIButton,
-        choice_B: UIButton,
-        chatbox: UILabel,
-        // image
-        char_view: UIImageView,
+        // properties
         char_img: String,
-        // data structs
         states: [State]
     ) {
         self.name = name
         self.number = number
-        self.choice_A = choice_A
-        self.choice_B = choice_B
-        self.chatbox = chatbox
-        self.char_view = char_view
         self.char_img = char_img
-        self.states = states
-                
-        char_view.image = UIImage(named: char_img)
+        self.states = states                
+    }
+    
+    func get_state(number: Int) -> State? {
+        for state in states { if number == state.state_number { return state } }
+        return nil
     }
     
     // overridable

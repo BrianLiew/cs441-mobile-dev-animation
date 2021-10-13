@@ -11,51 +11,71 @@ import UIKit
 // singleton class
 class Levels {
     
-    let choice_A: UIButton
-    let choice_B: UIButton
-    let chatbox: UILabel
-    // image
-    let char_view: UIImageView
-    
-    
-    init(choice_A: UIButton, choice_B: UIButton, chatbox: UILabel, char_view: UIImageView) {
-        self.choice_A = choice_A
-        self.choice_B = choice_B
-        self.chatbox = chatbox
-        self.char_view = char_view
-        all_levels = []
-    }
+    static let shared_instance = Levels()
     
     func testing() -> String {
         return "This is a string"
     }
     
-    func init_levels() {
+    public var all_levels: [Level] = [
+        
+    ]
+    
+    init() {
+        // STATE INITIALIZATION
+        // WARNING: appending new states from top, not bottom
+        // dungeon_level states
+        let dungeon_fail = State (
+            state_name: "failed dungeon",
+            state_number: -1,
+            dialouge_text: "you are weak-willed. you may be alive, but you fail in life",
+            choice_A_text: "-",
+            choice_B_text: "-",
+            choice_A_next_state: nil,
+            choice_B_next_state: nil,
+            next_level: nil
+        )
+        let dungeon_1 = State (
+            state_name: "entering decision confirmation",
+            state_number: 0,
+            dialouge_text: "are you sure?",
+            choice_A_text: "yes! let me in already...",
+            choice_B_text: "... no",
+            choice_A_next_state: nil,
+            choice_B_next_state: dungeon_fail,
+            next_level: nil
+        )
+        let dungeon_0 = State (
+            state_name: "entering decision",
+            state_number: 0,
+            dialouge_text: "do you wish to enter the dungeon?",
+            choice_A_text: "Yes",
+            choice_B_text: "No",
+            choice_A_next_state: dungeon_1,
+            choice_B_next_state: dungeon_1,
+            next_level: nil
+        )
+        // LEVEL INTIALIZATION
+        // WARNING: appending new levels from top, not bottom
+        let dungeon_level = Level (
+            name: "dungeon entrance",
+            number: 0,
+            char_img: "40f.jpg",
+            states:
+                [
+                    dungeon_0,
+                    dungeon_1
+                ]
+        )
+        // all_levels INITIALIZATION
         all_levels = [
-            // entrance
-            Level (
-                name: "entrance",
-                number: 0,
-                choice_A: choice_A,
-                choice_B: choice_B,
-                chatbox: chatbox,
-                char_view: char_view,
-                char_img: "40f.jpg",
-                states: [
-                    State (
-                        state_name: "introduction",
-                        state_number: 0,
-                        dialouge_text: "before you lays a dark entrance",
-                        choice_A_text: "go in",
-                        choice_B_text: "turn around and go home",
-                        choice_A_next_State: "a state",
-                        choice_B_next_State: "b state",
-                        choice_A: choice_A,
-                        choice_B: choice_B
-                    )
-                ])
-            //
+            dungeon_level
         ]
+    }
+    
+    func get_level(number: Int) -> Level? {
+        for level in all_levels { if number == level.number { return level } }
+        return nil
     }
     
 }

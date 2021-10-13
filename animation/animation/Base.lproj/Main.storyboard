@@ -51,6 +51,9 @@
                                 <state key="normal" title="choice_A">
                                     <color key="titleColor" systemColor="systemRedColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="choice_A_selected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tEP-QI-Uxv"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ugr-xe-Cs8" userLabel="choice_B">
                                 <rect key="frame" x="50" y="648.33333333333337" width="275" height="79.666666666666629"/>
@@ -58,6 +61,9 @@
                                 <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="18"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="choice_B"/>
+                                <connections>
+                                    <action selector="choice_B_selected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BpY-Y5-Haa"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -94,6 +100,8 @@
                         <outlet property="background_view" destination="0sM-fB-P0D" id="AN6-iy-ci4"/>
                         <outlet property="character_view" destination="1tA-e2-z9m" id="IF2-Kh-tnE"/>
                         <outlet property="chatbox" destination="1Hl-0V-UKN" id="YeV-qA-HEw"/>
+                        <outlet property="choice_A" destination="xhY-nm-xVh" id="cbc-4c-COg"/>
+                        <outlet property="choice_B" destination="Ugr-xe-Cs8" id="Jwx-GA-PkE"/>
                         <outlet property="control_view" destination="hpt-E7-nRp" id="XRU-yM-jJ3"/>
                     </connections>
                 </viewController>
