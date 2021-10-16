@@ -41,6 +41,8 @@ class ViewController: UIViewController {
         view.sendSubviewToBack(character_view)
         view.sendSubviewToBack(background_view)
         
+        character_view.layer.position.y = screen_height / 2 + 500
+        
         update_UI(current_state: current_state)
     }
     
@@ -48,10 +50,16 @@ class ViewController: UIViewController {
         chatbox.text = current_state.dialouge_text
         choice_A.setTitle(current_state.choice_A_text, for: .normal)
         choice_B.setTitle(current_state.choice_B_text, for: .normal)
+        
+        current_state.play_animation(a_view: character_view)
     }
     
     @IBAction func choice_A_selected(_ sender: UIButton) {
-        let next_config = current_state.choice_A_selected()
+        // VERIFICATION
+        print("was on \(current_level.name) & \(current_state.name)")
+        
+        let next_config = current_state.choice_A_selected(animation_view: character_view)
+        
         if let current_level_unwrapped = next_config.0 {
             current_level = current_level_unwrapped
         }
@@ -60,14 +68,17 @@ class ViewController: UIViewController {
         }
         
         // VERIFICATION
-        print(current_level.name)
-        print(current_state.state_name)
+        print("now on \(current_level.name) & \(current_state.name)")
         
         update_UI(current_state: current_state)
     }
     
     @IBAction func choice_B_selected(_ sender: UIButton) {
-        let next_config = current_state.choice_B_selected()
+        // VERIFICATION
+        print("was on \(current_level.name) & \(current_state.name)")
+        
+        let next_config = current_state.choice_B_selected(animation_view: character_view)
+        
         if let current_level_unwrapped = next_config.0 {
             current_level = current_level_unwrapped
         }
@@ -76,8 +87,7 @@ class ViewController: UIViewController {
         }
         
         // VERIFICATION
-        print(current_level.name)
-        print(current_state.state_name)
+        print("now on \(current_level.name) & \(current_state.name)")
         
         update_UI(current_state: current_state)
     }

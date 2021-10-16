@@ -32,20 +32,8 @@ class Level {
     }
     
     func get_state(number: Int) -> State? {
-        for state in states { if number == state.state_number { return state } }
+        for state in states { if number == state.number { return state } }
         return nil
-    }
-    
-    // overridable
-    func set_appear_animate(from: CGFloat, to: CGFloat, duration: Double, a_view: UIView) {
-        let animation = CABasicAnimation()
-        
-        animation.keyPath = "position.y"
-        animation.fromValue = from
-        animation.toValue = to
-        animation.duration = duration
-        
-        a_view.layer.add(animation, forKey: "basic")
     }
     
 }

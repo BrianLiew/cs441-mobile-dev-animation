@@ -26,34 +26,48 @@ class Levels {
         // WARNING: appending new states from top, not bottom
         // dungeon_level states
         let dungeon_fail = State (
-            state_name: "failed dungeon",
-            state_number: -1,
+            name: "failed dungeon",
+            number: -1,
             dialouge_text: "you are weak-willed. you may be alive, but you fail in life",
             choice_A_text: "-",
             choice_B_text: "-",
             choice_A_next_state: nil,
             choice_B_next_state: nil,
-            next_level: nil
+            next_level: nil,
+            animation_type: animations.disappear
         )
         let dungeon_1 = State (
-            state_name: "entering decision confirmation",
-            state_number: 0,
+            name: "entering decision confirmation",
+            number: 0,
             dialouge_text: "are you sure?",
             choice_A_text: "yes! let me in already...",
             choice_B_text: "... no",
             choice_A_next_state: nil,
             choice_B_next_state: dungeon_fail,
-            next_level: nil
+            next_level: nil,
+            animation_type: animations.none
         )
         let dungeon_0 = State (
-            state_name: "entering decision",
-            state_number: 0,
-            dialouge_text: "do you wish to enter the dungeon?",
+            name: "entering decision",
+            number: 0,
+            dialouge_text: "A dark doorway appears before you. Do you wish to enter the dungeon?",
             choice_A_text: "Yes",
             choice_B_text: "No",
             choice_A_next_state: dungeon_1,
             choice_B_next_state: dungeon_1,
-            next_level: nil
+            next_level: nil,
+            animation_type: animations.appear
+        )
+        let start_0 = State (
+            name: "start game",
+            number: 0,
+            dialouge_text: "Bandersnatch: Dungeons",
+            choice_A_text: "start",
+            choice_B_text: "start",
+            choice_A_next_state: dungeon_0,
+            choice_B_next_state: dungeon_0,
+            next_level: nil,
+            animation_type: animations.none
         )
         // LEVEL INTIALIZATION
         // WARNING: appending new levels from top, not bottom
@@ -63,6 +77,7 @@ class Levels {
             char_img: "40f.jpg",
             states:
                 [
+                    start_0,
                     dungeon_0,
                     dungeon_1
                 ]
