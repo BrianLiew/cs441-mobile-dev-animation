@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         if let current_level_unwrapped = levels_instance.get_level(number: 0) {
             current_level = current_level_unwrapped
         } else { fatalError("cannot find level numbered 0, ViewController initialization failed") }
-        if let current_state_unwrapped = levels_instance.get_state(number: 0) {
+        if let current_state_unwrapped = levels_instance.get_state(number: 0.5) {
             current_state = current_state_unwrapped
         } else { fatalError("cannot find state numbered 0, ViewController initialization failed") }
         super.init(coder: aDecoder)!

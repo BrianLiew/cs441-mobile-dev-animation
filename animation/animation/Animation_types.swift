@@ -10,5 +10,8 @@ import Foundation
 enum animations {
     case appear
     case disappear
+    case angered
+    case dazed
+    case dazed_and_defeated
     case none
 }
