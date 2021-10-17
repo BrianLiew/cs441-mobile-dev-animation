@@ -61,23 +61,23 @@ class State {
             //
             animation.keyPath = "position.y"
             animation.fromValue = a_view.layer.position.y
-            animation.toValue = screen_height / 2 - screen_width / 3
+            animation.toValue = screen_height / 2 - screen_width / 2
             animation.duration = 2
             
             a_view.layer.add(animation, forKey: "basic")
             
-            a_view.layer.position = CGPoint(x: screen_width / 2, y: screen_height / 2 - screen_width / 6)
+            a_view.layer.position = CGPoint(x: screen_width / 2, y: screen_height / 2 - screen_width / 2)
             //
         case animations.disappear:
             //
             animation.keyPath = "position.y"
             animation.fromValue = a_view.layer.position.y
-            animation.toValue = screen_height / 2 + screen_width / 3
+            animation.toValue = screen_height / 2 + screen_width / 2
             animation.duration = 2
             
             a_view.layer.add(animation, forKey: "basic")
             
-            a_view.layer.position = CGPoint(x: screen_width / 2, y: screen_height / 2 + screen_width / 3)
+            a_view.layer.position = CGPoint(x: screen_width / 2, y: screen_height / 2 + screen_width / 2)
             //
         default:
             print("none execution placeholder")

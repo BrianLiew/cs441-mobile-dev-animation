@@ -56,15 +56,6 @@
                                     <action selector="choice_B_selected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BpY-Y5-Haa"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="40f.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="1tA-e2-z9m" userLabel="character_view">
-                                <rect key="frame" x="45" y="357" width="300" height="300"/>
-                                <color key="backgroundColor" systemColor="systemRedColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="6n6-Yr-M4q"/>
-                                    <constraint firstAttribute="width" secondItem="1tA-e2-z9m" secondAttribute="height" multiplier="1:1" id="UgN-2l-GKH"/>
-                                    <constraint firstAttribute="width" constant="300" id="zet-aX-xjj"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -80,7 +71,6 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hpt-E7-nRp" secondAttribute="trailing" id="OuO-Wx-dwx"/>
                             <constraint firstItem="1Hl-0V-UKN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Rsl-xo-OEx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ugr-xe-Cs8" secondAttribute="trailing" constant="50" id="WuU-Xy-0Lx"/>
-                            <constraint firstItem="1tA-e2-z9m" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cix-by-E3Y"/>
                             <constraint firstItem="1Hl-0V-UKN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="dQG-T3-NNr"/>
                             <constraint firstItem="Ugr-xe-Cs8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="eik-ba-NvR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1Hl-0V-UKN" secondAttribute="trailing" id="fpc-cE-7Kq"/>
@@ -98,7 +88,6 @@
                     </view>
                     <connections>
                         <outlet property="background_view" destination="0sM-fB-P0D" id="AN6-iy-ci4"/>
-                        <outlet property="character_view" destination="1tA-e2-z9m" id="IF2-Kh-tnE"/>
                         <outlet property="chatbox" destination="1Hl-0V-UKN" id="YeV-qA-HEw"/>
                         <outlet property="choice_A" destination="xhY-nm-xVh" id="cbc-4c-COg"/>
                         <outlet property="choice_B" destination="Ugr-xe-Cs8" id="Jwx-GA-PkE"/>
@@ -111,7 +100,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="40f.jpg" width="200" height="300"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

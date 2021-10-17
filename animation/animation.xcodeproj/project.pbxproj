@@ -14,7 +14,6 @@
 		F1682C84270DE30900498BFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1682C83270DE30900498BFD /* Assets.xcassets */; };
 		F1682C87270DE30900498BFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1682C85270DE30900498BFD /* LaunchScreen.storyboard */; };
 		F1682C8F27139AC100498BFD /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1682C8E27139AC100498BFD /* Level.swift */; };
-		F1682C9127147C2500498BFD /* 40f.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F1682C9027147C2500498BFD /* 40f.jpg */; };
 		F1682C9B2716B6AA00498BFD /* Levels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1682C9A2716B6AA00498BFD /* Levels.swift */; };
 		F1682C9D27172A5900498BFD /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1682C9C27172A5900498BFD /* State.swift */; };
 		F1917805271B8F4000841AD3 /* Animation_types.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1917804271B8F4000841AD3 /* Animation_types.swift */; };
@@ -30,7 +29,6 @@
 		F1682C86270DE30900498BFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1682C88270DE30900498BFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1682C8E27139AC100498BFD /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
-		F1682C9027147C2500498BFD /* 40f.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 40f.jpg; sourceTree = "<group>"; };
 		F1682C9A2716B6AA00498BFD /* Levels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Levels.swift; sourceTree = "<group>"; };
 		F1682C9C27172A5900498BFD /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		F1917804271B8F4000841AD3 /* Animation_types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation_types.swift; sourceTree = "<group>"; };
@@ -66,7 +64,6 @@
 		F1682C79270DE30600498BFD /* animation */ = {
 			isa = PBXGroup;
 			children = (
-				F1682C9027147C2500498BFD /* 40f.jpg */,
 				F1682C7A270DE30600498BFD /* AppDelegate.swift */,
 				F1682C7C270DE30600498BFD /* SceneDelegate.swift */,
 				F1682C7E270DE30600498BFD /* ViewController.swift */,
@@ -148,7 +145,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1682C9127147C2500498BFD /* 40f.jpg in Resources */,
 				F1682C87270DE30900498BFD /* LaunchScreen.storyboard in Resources */,
 				F1682C84270DE30900498BFD /* Assets.xcassets in Resources */,
 				F1682C82270DE30600498BFD /* Main.storyboard in Resources */,

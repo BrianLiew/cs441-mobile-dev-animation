@@ -15,25 +15,17 @@ class Level {
     let number: Int
     // properties
     var char_img: String
-    var states: [State]
     
     init(
         // object properties
         name: String,
         number: Int,
         // properties
-        char_img: String,
-        states: [State]
+        char_img: String
     ) {
         self.name = name
         self.number = number
         self.char_img = char_img
-        self.states = states                
-    }
-    
-    func get_state(number: Int) -> State? {
-        for state in states { if number == state.number { return state } }
-        return nil
     }
     
 }
